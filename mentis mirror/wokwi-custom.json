@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "author": "Survi Mukherjee",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": { "builder": "esp-idf" } },
+    { "type": "dht22", "id": "dht", "top": -40, "left": 160 },
+    { "type": "mq2", "id": "mq", "top": 60, "left": 180 },
+    { "type": "microphone", "id": "mic", "top": 60, "left": 300 },
+    { "type": "oled-i2c", "id": "oled", "top": -60, "left": 360 },
+    { "type": "led", "id": "led_red", "top": 180, "left": 40, "attrs": { "color": "red" } },
+    { "type": "led", "id": "led_green", "top": 180, "left": 100, "attrs": { "color": "green" } },
+    { "type": "led", "id": "led_blue", "top": 180, "left": 160, "attrs": { "color": "blue" } },
+    { "type": "buzzer", "id": "buzz", "top": 180, "left": 220 }
+  ],
+  "connections": [
+    [ "esp:15", "dht:DATA", "green", [ "v0" ] ],
+    [ "esp:GND.1", "dht:GND", "black", [ "v0" ] ],
+    [ "esp:3V3", "dht:VCC", "red", [ "v0" ] ],
+
+    [ "esp:34", "mq:AO", "green", [ "v0" ] ],
+    [ "esp:GND.2", "mq:GND", "black", [ "v0" ] ],
+    [ "esp:3V3", "mq:VCC", "red", [ "v0" ] ],
+
+    [ "esp:35", "mic:OUT", "green", [ "v0" ] ],
+    [ "esp:GND.2", "mic:GND", "black", [ "v0" ] ],
+    [ "esp:3V3", "mic:VCC", "red", [ "v0" ] ],
+
+    [ "esp:21", "oled:SDA", "green", [ "v0" ] ],
+    [ "esp:22", "oled:SCL", "green", [ "v0" ] ],
+    [ "esp:GND.2", "oled:GND", "black", [ "v0" ] ],
+    [ "esp:3V3", "oled:VCC", "red", [ "v0" ] ],
+
+    [ "esp:14", "led_red:A", "green", [ "v0" ] ],
+    [ "led_red:C", "esp:GND.1", "black", [ "v0" ] ],
+
+    [ "esp:26", "led_green:A", "green", [ "v0" ] ],
+    [ "led_green:C", "esp:GND.1", "black", [ "v0" ] ],
+
+    [ "esp:27", "led_blue:A", "green", [ "v0" ] ],
+    [ "led_blue:C", "esp:GND.1", "black", [ "v0" ] ],
+
+    [ "esp:13", "buzz:1", "green", [ "v0" ] ],
+    [ "buzz:2", "esp:GND.2", "black", [ "v0" ] ],
+
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ]
+  ],
+  "dependencies": {}
+}
