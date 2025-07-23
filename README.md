@@ -104,6 +104,7 @@ Mentis Mirror is an intelligent emotion-aware smart mirror, inspired by the wiza
   <img width="1854" height="737" alt="13" src="https://github.com/user-attachments/assets/16372852-cc2c-413f-86cc-8cc03a6d7db9" />
 
 - Emotion Logs
+  <img width="1502" height="681" alt="database" src="https://github.com/user-attachments/assets/47f05b59-9a0e-4a9a-bdc7-5869c1f49173" />
   <img width="1899" height="813" alt="9" src="https://github.com/user-attachments/assets/5fa7b4ac-1760-40ef-b6e9-0217b10144e7" />
 
 - SHAP Explainability
